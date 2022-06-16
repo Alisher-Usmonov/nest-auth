@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <style type="text/tailwindcss">
+        .flexbox {
+            @apply flex items-center justify-center;
+        }
+        .border-bottom {
+            @apply border-b-2 border-white mb-3 pb-2;
+        }
+    </style>
+</head>
+<body class="w-full h-screen bg-blue-300 flexbox">
+    <div class="w-[450px] h-[350px] bg-indigo-500 shadow-md flexbox flex-col">
+        <% if(user) { %>
+            <h1 class="text-2xl font-semibold text-white border-bottom"><%= user.first_name  %> <%= user.last_name%></h1>
+            <h2 class="text-xl font-semibold text-white border-bottom">@<%= user.username %></h2>    
+            <h2 class="text-xl font-semibold text-white border-bottom"><%= user.email %></h2>    
+            <a href="/auth/signout" class="text-xl font-semibold text-white mt-4">Sign Out</a>    
+        <% } else { %>
+            <h1 class="text-2xl font-semibold text-white border-bottom">Oops, Your account not authorized</h1>
+            <a href="/auth/signin" class="font-semibold text-white hover:text-blue-300 text-lg">Click here to sign in</a>
+        <% } %>
+    </div>
+    <script>
+        console.log(`User: <%=user%>`);
+    </script>
+</body>
+</html>

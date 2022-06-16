@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <style type="text/tailwindcss">
+        .flexbox {
+            @apply flex items-center justify-center;
+        }
+        .default-input {
+            @apply w-full py-1 bg-yellow-400 border-2 border-gray-900 mb-2 outline-none px-2 text-lg placeholder-gray-900 text-gray-900 font-medium;
+        }
+    </style>
+</head>
+<body class="w-full h-screen bg-gray-400 flexbox bg-yellow-400">
+    <form class="w-[400px] h-auto bg-yellow-200 pb-6 pt-2 px-3 flex items-center flex-col border-2 border-gray-900 font-mono" method="post" action="/auth/signup">
+        <h1 class="text-3xl pt-3 font-semibold">Sign Up</h1>
+        <input type="text" name="first_name" placeholder="First Name" class="default-input mt-3">
+        <input type="text" name="last_name" placeholder="Last Name" class="default-input">
+        <input type="text" name="username" placeholder="Username" class="default-input">
+        <input type="text" name="email" placeholder="Email" class="default-input">
+        <input type="password" name="password" placeholder="Password" class="default-input">
+        <button type="submit" class="w-full p-2 bg-yellow-400 font-semibold border-2 border-gray-900 mt-6 text-lg hover:bg-gray-900 hover:text-yellow-400 transition duration-500">Sign Up</button>
+    </form>
+</body>
+</html>

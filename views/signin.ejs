@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <style type="text/tailwindcss">
+        .flexbox {
+            @apply flex items-center justify-center;
+        }
+        .default-input {
+            @apply w-full py-1 bg-yellow-400 border-2 border-gray-900 mb-2 outline-none px-2 text-lg placeholder-gray-900 text-gray-900 font-medium;
+        }
+    </style>
+</head>
+<body class="w-full h-screen bg-white flexbox">
+    <form class="w-[400px] h-auto bg-white pb-6 pt-2 px-3 flex items-center flex-col border-2 border-gray-900 font-mono" method="post" action="/auth/signin">
+        <h1 class="text-3xl pt-3 font-semibold mb-4 text-gray-900">Sign In</h1>
+        <input type="text" name="username" placeholder="Username" class="default-input">
+        <input type="password" name="password" placeholder="Password" class="default-input">
+        <button type="submit" class="w-full p-2 bg-white font-semibold border-2 border-gray-900 mt-3 text-lg hover:bg-gray-900 hover:text-white transition duration-500">Sign In</button>
+        <h3 class="text-lg mt-2 font-semibold">Don't have account ? <a href="/auth/signup">sign up here</a></h3>
+    </form>
+</body>
+</html>
